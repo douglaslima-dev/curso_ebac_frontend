@@ -12,7 +12,6 @@
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
     text-decoration: none;
-    list-style: none;
 }
 
 body {
@@ -34,15 +33,13 @@ header {
     color: aliceblue;
 }
 
-#logo img {
-    margin: auto 0;
-}
-
 #logo h1 {
     margin:auto 0;
     margin-left: 10px;
     font-size: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.438);
+    text-transform: uppercase;
+    font-style: italic;
 }
 
 #nav-button, #adicionar, #cancelar {
@@ -52,16 +49,21 @@ header {
     padding: 4px;
     font-size: 18px;
     font-weight: bold;
-    border: none;
+    border: 1px solid black;
     border-radius: 4px;
     background-color: rgb(96, 192, 0);
     color: #fff;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.658);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.425);
+    cursor: pointer;
+}
+
+#cancelar {
+    background-color: rgba(223, 0, 0, 0.671);
 }
 
 #nav-button:hover, #adicionar:hover {
-    transition: .5s;
+    transition: .4s;
     font-size: 19px;
     background-color: lawngreen;
 }
@@ -72,23 +74,21 @@ header {
     background-color: rgb(255, 0, 0);
 }
 
+.menu {
+    display: none;
+}
+
 #form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-direction: row;
     width: 100%;
     padding: 10px;
     background-color: var(--marromMedio);
     color: var(--branco);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
-}
-
-#buttons {
-    margin: auto 0;
-}
-
-#cancelar {
-    background-color: rgba(223, 0, 0, 0.671);
+    border-bottom: 1px solid black;
 }
 
 #form button{
@@ -120,7 +120,43 @@ header {
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    height: calc(100vh - 150px);
+    height: 100vh;
     background-color: var(--marromEscuro);
+    border: 1px solid black;
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.514);
 }
 
+.container h2 {
+    margin-top: 30px;
+    margin-left: 30px;
+    align-self: flex-start;
+    color: var(--branco);
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.349);
+    border-bottom: 1px dashed black;
+}
+
+ul {
+    background-color: #f0e5c9;
+    min-width: 500px;
+    margin-top: 30px;
+    padding: 30px;
+    font-size: 20px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.37);
+}
+
+li {
+    margin: 6px;
+}
+
+li:hover {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.concluido {
+    text-decoration: line-through;
+    color: rgba(223, 0, 0, 0.671);
+}
