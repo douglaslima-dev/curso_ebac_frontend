@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to left, transparent 0%, #082d55e7 75%), url(./image/hike-5796976_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.logo {
+    position: absolute;
+    padding-top: 80px;
+    padding-left: 80px;
+}
+
+.conteudo {
+    max-width: 1920px;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 100px;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: top;
+}
+
+.logo h1 {
+    padding-left: 8px;
+    font-size: 1.1em;
+}
+
+.conteudo h2 {
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control { 
+    width: 500px;
+    background-color: #ffffff3d;
+    backdrop-filter: blur(20px);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    margin: 12px 0;
+    padding: 10px;
+}  
+
+.form-control::placeholder {
+    color: #fff;
+}
+
+.form-control:focus {
+    background-color: #ffffff41;
+    color: #fff;
+    border: 1px solid #fff;
+    box-shadow: none;
+}
+
+form .btn {
+    width: 500px;
+    padding: 10px;
+    max-width: 100%;
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
+
+form a {
+    display: block;
+    margin: auto;
+    color: #fff;
+}
+
+form a:hover {
+    color: #d3d3d3;
+}
+
+footer p{
+    margin: 0;
+    background-color: #d3d3d3;
+    max-height: 100%;
+}
