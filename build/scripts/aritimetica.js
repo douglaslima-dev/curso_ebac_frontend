@@ -1,0 +1,1 @@
+const somar=require("./sum");console.log(somar(12,7));
