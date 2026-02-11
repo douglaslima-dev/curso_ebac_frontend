@@ -1,7 +1,7 @@
 @import "mapas.less";
+@import "variaveis.less";
+@import "escapings.less";
 
-@bpMobile: ~"(max-width: 767px)";
-@bpTablet: ~"(min-width: 768px) and (max-width: 1023px)";
 
 * {
     margin: 0;
@@ -96,7 +96,7 @@ section {
 
         .product-button {
             display: block;
-            background-color: #colors[buttonColor];
+            background-color: @buttonColor;
             color: #colors[textColor];
             text-align: center;
             padding: 8px 0;
@@ -104,7 +104,7 @@ section {
             margin-top: 8px;
 
             &:hover {
-                background-color: #colors[buttonColorHover];
+                background-color: @buttonHoverColor;
             }
         }
     }
