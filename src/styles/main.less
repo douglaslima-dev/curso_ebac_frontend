@@ -1,3 +1,36 @@
 body {
-    background-color: rgb(2, 2, 101);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(0, 91, 0, 0.259);
+}
+
+img {
+    border: 1px solid #eee;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #eee;
+        transform: scale(110%);
+        transition: .3s;
+    }
+}
+
+#botao {
+    background: rgb(11, 150, 11);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    margin: auto;
+
+    &:hover {
+        background: rgb(12, 176, 12);
+    }
+}
+
+#area-res {
+    display: none;
 }

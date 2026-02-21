@@ -30,7 +30,7 @@ module.exports = function (grunt) {
                         },
                         {
                             match: 'ENDERECO_DO_JS',
-                            replacement: '../src/scripts/main.js'
+                            replacement: './scripts/main.js'
                         }
                     ]
                 },
@@ -53,7 +53,7 @@ module.exports = function (grunt) {
                         },
                         {
                             match: 'ENDERECO_DO_JS',
-                            replacement: '../scripts/main.min.js'
+                            replacement: './scripts/main.min.js'
                         }
                     ]
                 },
@@ -92,14 +92,48 @@ module.exports = function (grunt) {
             }
         },
 
+        copy: {
+            dev: {
+                expand: true,
+                cwd: 'src/images/',
+                src: '**/*',
+                dest: 'dev/images/'
+            },
+
+            dist: {
+                expand: true,
+                cwd: 'src/images/',
+                src: '**/*',
+                dest: 'dist/images/'
+            },
+
+            devScripts: {
+                expand: true,
+                cwd: 'src/scripts/',
+                src: '**/*.js',
+                dest: 'dev/scripts/'
+            }
+        },
+
         watch: {
             less: {
                 files: ['src/styles/**/*.less'],
                 tasks: ['less:development']
             },
+
             html: {
                 files: ['src/index.html'],
                 tasks: ['replace:dev']
+            },
+
+            images: {
+                files: ['src/images/**/*'],
+                tasks: ['copy:dev']
+            },
+
+            scripts: {
+                files: ['src/scripts/**/*.js'],
+                tasks: ['copy:devScripts']
             }
         }
     })
@@ -110,7 +144,22 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-htmlmin'); // carregar o plugin de compressão do html
     grunt.loadNpmTasks('grunt-contrib-clean'); // carregar o plugin para excluir algum arquivo
     grunt.loadNpmTasks('grunt-contrib-uglify'); // carregar o plugin de compressão do JacaScript
+    grunt.loadNpmTasks('grunt-contrib-copy'); // carregar o plugin de cópia
 
-    grunt.registerTask('default', ['less:development', 'replace:dev', 'watch']);
-    grunt.registerTask('build', ['htmlmin:dist', 'replace:dist', 'clean:prebuild', 'less:production', 'uglify']);
+    grunt.registerTask('default', [
+        'less:development',
+        'replace:dev',
+        'copy:dev',
+        'copy:devScripts',
+        'watch'
+    ]);
+
+    grunt.registerTask('build', [
+        'htmlmin:dist',
+        'less:production',
+        'uglify',
+        'copy:dist',
+        'replace:dist',
+        'clean:prebuild'
+    ]);
 }

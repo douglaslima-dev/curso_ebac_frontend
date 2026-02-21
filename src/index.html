@@ -14,10 +14,21 @@
 </head>
 
 <body>
-    <header>
-        <h1>Olá</h1>
-        <h2>aa</h2>
-    </header>
+    <h1>Pedra, Papel ou Tesoura!</h1>
+    <h2 id="frase">Escolha uma opção:</h2>
+
+    <div id="area-escolha">
+        <img id="pedra" onclick="select(0)" src="images/pedra.png">
+        <img id="papel" onclick="select(1)" src="images/papel.png">
+        <img id="tesoura" onclick="select(2)" src="images/tesoura.png">
+    </div>
+
+    <div id="area-res">
+        <img id="jogador" src="images/papel.png">
+        <img id="pc" src="images/papel-pc.png">
+        <br>
+        <button id="botao" onclick="location.reload(true)" >Recomeçar</button>
+    </div>
 
     <script src="@@ENDERECO_DO_JS"></script>
 </body>
